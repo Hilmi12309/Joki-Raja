@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - GameBoost</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Game<span>Boost</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="daftar.html">Register</a></li>
+                    <li class="active"><a href="profile.html">Profile</a></li>
+                    <li><a href="kontak.html">Contact</a></li>
+                </ul>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="profile-container">
+        <div class="container">
+            <!-- Profile Header Section -->
+            <section class="profile-header">
+                <div class="profile-avatar-container">
+                    <div class="profile-avatar">
+                        <img src="https://via.placeholder.com/150" alt="Profile Picture" id="profile-picture">
+                        <label for="avatar-upload" class="edit-avatar-btn">
+                            <i class="fas fa-pen"></i>
+                        </label>
+                        <input type="file" id="avatar-upload" accept="image/*" style="display: none;">
+                    </div>
+                </div>
+                
+                <div class="profile-info">
+                    <h1 id="profile-username">JohnDoe123</h1>
+                    <p class="member-since">Member since: <span id="join-date">January 2023</span></p>
+                    
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" id="total-orders">12</span>
+                            <span class="stat-label">Orders</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="active-boosts">3</span>
+                            <span class="stat-label">Active Boosts</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="user-rating">4.9</span>
+                            <span class="stat-label">Avg Rating</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profile Navigation Tabs -->
+            <nav class="profile-tabs">
+                <button class="tab-btn active" data-tab="overview">Overview</button>
+                <button class="tab-btn" data-tab="orders">My Orders</button>
+                <button class="tab-btn" data-tab="boosts">Active Boosts</button>
+                <button class="tab-btn" data-tab="settings">Settings</button>
+            </nav>
+
+            <!-- Tab Content Sections -->
+            <div class="tab-content active" id="overview-tab">
+                <section class="profile-section">
+                    <h2>Account Overview</h2>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h3>Personal Information</h3>
+                            <div class="info-item">
+                                <span class="info-label">Username:</span>
+                                <span class="info-value" id="display-username">JohnDoe123</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Email:</span>
+                                <span class="info-value" id="display-email">john.doe@example.com</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Last Login:</span>
+                                <span class="info-value" id="last-login">Today, 14:30</span>
+                            </div>
+                            <button class="edit-btn" id="edit-personal-btn">Edit Information</button>
+                        </div>
+                        
+                        <div class="info-card">
+                            <h3>Game Preferences</h3>
+                            <div class="info-item">
+                                <span class="info-label">Main Game:</span>
+                                <span class="info-value" id="main-game">Mobile Legends</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Other Games:</span>
+                                <span class="info-value" id="other-games">Valorant, League of Legends</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Preferred Rank:</span>
+                                <span class="info-value" id="preferred-rank">Mythic</span>
+                            </div>
+                            <button class="edit-btn" id="edit-games-btn">Edit Preferences</button>
+                        </div>
+                        
+                        <div class="info-card">
+                            <h3>Recent Activity</h3>
+                            <div class="activity-item">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span>New order placed - Mobile Legends Mythic Boost</span>
+                                <span class="activity-time">2 hours ago</span>
+                            </div>
+                            <div class="activity-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Order completed - Valorant Gold to Platinum</span>
+                                <span class="activity-time">3 days ago</span>
+                            </div>
+                            <div class="activity-item">
+                                <i class="fas fa-comment"></i>
+                                <span>New message from your booster</span>
+                                <span class="activity-time">1 day ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="tab-content" id="orders-tab">
+                <section class="profile-section">
+                    <h2>Order History</h2>
+                    <div class="order-history">
+                        <div class="order-card">
+                            <div class="order-header">
+                                <span class="order-id">Order #GB20230615</span>
+                                <span class="order-date">June 15, 2023</span>
+                                <span class="order-status completed">Completed</span>
+                            </div>
+                            <div class="order-details">
+                                <div class="game-info">
+                                    <img src="https://via.placeholder.com/50?text=ML" alt="Mobile Legends">
+                                    <div>
+                                        <h3>Mobile Legends</h3>
+                                        <p>Mythic Rank Boost</p>
+                                    </div>
+                                </div>
+                                <div class="order-price">$25.00</div>
+                            </div>
+                            <div class="order-actions">
+                                <button class="action-btn reorder-btn">Reorder</button>
+                                <button class="action-btn details-btn">View Details</button>
+                            </div>
+                        </div>
+                        
+                        <div class="order-card">
+                            <div class="order-header">
+                                <span class="order-id">Order #GB20230610</span>
+                                <span class="order-date">June 10, 2023</span>
+                                <span class="order-status completed">Completed</span>
+                            </div>
+                            <div class="order-details">
+                                <div class="game-info">
+                                    <img src="https://via.placeholder.com/50?text=VAL" alt="Valorant">
+                                    <div>
+                                        <h3>Valorant</h3>
+                                        <p>Gold to Platinum Boost</p>
+                                    </div>
+                                </div>
+                                <div class="order-price">$35.00</div>
+                            </div>
+                            <div class="order-actions">
+                                <button class="action-btn reorder-btn">Reorder</button>
+                                <button class="action-btn details-btn">View Details</button>
+                            </div>
+                        </div>
+                        
+                        <div class="order-card">
+                            <div class="order-header">
+                                <span class="order-id">Order #GB20230528</span>
+                                <span class="order-date">May 28, 2023</span>
+                                <span class="order-status canceled">Canceled</span>
+                            </div>
+                            <div class="order-details">
+                                <div class="game-info">
+                                    <img src="https://via.placeholder.com/50?text=LOL" alt="League of Legends">
+                                    <div>
+                                        <h3>League of Legends</h3>
+                                        <p>Diamond Rank Boost</p>
+                                    </div>
+                                </div>
+                                <div class="order-price">$45.00</div>
+                            </div>
+                            <div class="order-actions">
+                                <button class="action-btn reorder-btn">Reorder</button>
+                                <button class="action-btn details-btn">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="tab-content" id="boosts-tab">
+                <section class="profile-section">
+                    <h2>Active Boosts</h2>
+                    <div class="active-boosts-container">
+                        <div class="boost-card">
+                            <div class="boost-header">
+                                <div class="game-info">
+                                    <img src="https://via.placeholder.com/50?text=ML" alt="Mobile Legends">
+                                    <div>
+                                        <h3>Mobile Legends</h3>
+                                        <p>Legend to Mythic Boost</p>
+                                    </div>
+                                </div>
+                                <span class="boost-status in-progress">In Progress</span>
+                            </div>
+                            
+                            <div class="boost-progress">
+                                <div class="progress-info">
+                                    <span>Current Progress: 65%</span>
+                                    <span>Estimated Completion: 2 days</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 65%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="boost-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Booster:</span>
+                                    <span class="detail-value">ProPlayer123</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Started:</span>
+                                    <span class="detail-value">June 18, 2023</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Price:</span>
+                                    <span class="detail-value">$30.00</span>
+                                </div>
+                            </div>
+                            
+                            <div class="boost-actions">
+                                <button class="action-btn message-btn">
+                                    <i class="fas fa-comment-dots"></i> Message Booster
+                                </button>
+                                <button class="action-btn track-btn">
+                                    <i class="fas fa-chart-line"></i> Track Progress
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="boost-card">
+                            <div class="boost-header">
+                                <div class="game-info">
+                                    <img src="https://via.placeholder.com/50?text=VAL" alt="Valorant">
+                                    <div>
+                                        <h3>Valorant</h3>
+                                        <p>Platinum to Diamond Boost</p>
+                                    </div>
+                                </div>
+                                <span class="boost-status queued">In Queue</span>
+                            </div>
+                            
+                            <div class="boost-progress">
+                                <div class="progress-info">
+                                    <span>Current Position: #3 in queue</span>
+                                    <span>Estimated Start: Tomorrow</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="boost-details">
+                                <div class="detail-item">
+                                    <span class="detail-label">Assigned Booster:</span>
+                                    <span class="detail-value">-</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Order Placed:</span>
+                                    <span class="detail-value">June 20, 2023</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Price:</span>
+                                    <span class="detail-value">$40.00</span>
+                                </div>
+                            </div>
+                            
+                            <div class="boost-actions">
+                                <button class="action-btn cancel-btn">
+                                    <i class="fas fa-times-circle"></i> Cancel Boost
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="tab-content" id="settings-tab">
+                <section class="profile-section">
+                    <h2>Account Settings</h2>
+                    <form class="settings-form" id="account-settings-form">
+                        <div class="form-section">
+                            <h3>Personal Information</h3>
+                            <div class="form-group">
+                                <label for="settings-username">Username</label>
+                                <input type="text" id="settings-username" value="JohnDoe123">
+                            </div>
+                            <div class="form-group">
+                                <label for="settings-email">Email Address</label>
+                                <input type="email" id="settings-email" value="john.doe@example.com">
+                            </div>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h3>Change Password</h3>
+                            <div class="form-group">
+                                <label for="current-password">Current Password</label>
+                                <input type="password" id="current-password">
+                            </div>
+                            <div class="form-group">
+                                <label for="new-password">New Password</label>
+                                <input type="password" id="new-password">
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm-password">Confirm New Password</label>
+                                <input type="password" id="confirm-password">
+                            </div>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h3>Game Preferences</h3>
+                            <div class="form-group">
+                                <label for="main-game-select">Main Game</label>
+                                <select id="main-game-select">
+                                    <option value="mobile-legends">Mobile Legends</option>
+                                    <option value="valorant">Valorant</option>
+                                    <option value="league-of-legends">League of Legends</option>
+                                    <option value="dota2">Dota 2</option>
+                                    <option value="genshin-impact">Genshin Impact</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Other Games (Select up to 3)</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="other-games" value="valorant" checked> Valorant
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="other-games" value="league-of-legends" checked> League of Legends
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="other-games" value="dota2"> Dota 2
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" name="other-games" value="genshin-impact"> Genshin Impact
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-section">
+                            <h3>Notification Preferences</h3>
+                            <div class="form-group">
+                                <label class="switch-label">
+                                    <input type="checkbox" id="email-notifications" checked>
+                                    <span class="switch-slider"></span>
+                                    <span>Email Notifications</span>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label class="switch-label">
+                                    <input type="checkbox" id="sms-notifications">
+                                    <span class="switch-slider"></span>
+                                    <span>SMS Notifications</span>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <label class="switch-label">
+                                    <input type="checkbox" id="promo-emails" checked>
+                                    <span class="switch-slider"></span>
+                                    <span>Promotional Emails</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="cancel-btn">Cancel</button>
+                            <button type="submit" class="save-btn">Save Changes</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>GameBoost</h3>
+                    <p>Professional game boosting services since 2020.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="daftar.html">Register</a></li>
+                        <li><a href="kontak.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>support@gameboost.com</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/profile.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
